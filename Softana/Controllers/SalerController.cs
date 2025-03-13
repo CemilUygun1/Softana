@@ -19,6 +19,7 @@ public class SalerController : ControllerBase
     {
         _context = context;
         _mediator = mediator;
+
     }
 
     [HttpGet]
