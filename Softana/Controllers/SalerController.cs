@@ -31,7 +31,8 @@ public class SalerController : ControllerBase
     public async Task<IActionResult> GetById(int Id)
     {
         GetSalerByIdQueryResponse response = await _mediator.Send(new GetSalerByIdQueryRequest { SalerId = Id });
-        return Ok(response);
+        return Ok(response); 
+
     }
 
     [HttpPost]
