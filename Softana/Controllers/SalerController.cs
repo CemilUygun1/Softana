@@ -31,14 +31,28 @@ public class SalerController : ControllerBase
     public async Task<IActionResult> GetById(int Id)
     {
         GetSalerByIdQueryResponse response = await _mediator.Send(new GetSalerByIdQueryRequest { SalerId = Id });
-        return Ok(response); 
-
+        return Ok(response);
     }
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateSalerCommandRequest request)
     {
         CreateSalerCommandResponse response = await _mediator.Send(request);
+        return Ok(response);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateSalerCommandRequest request)
+    {
+        UpdateSalerCommandResponse response = await _mediator.Send(request);
+        return Ok(response);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        DeleteSalerCommandRequest request = new DeleteSalerCommandRequest() { SalerId = id };
+        DeleteSalerCommandResponse response = await _mediator.Send(request);
         return Ok(response);
     }
 }
