@@ -19,6 +19,8 @@ namespace Softana.Models
         public int? CityId { get; set; }
         public string IBAN { get; set; }
 
+        public virtual Country Country { get; set; }
+        public virtual City City { get; set; }
 
         public virtual ICollection<Saler> Salers { get; set; }
     }
