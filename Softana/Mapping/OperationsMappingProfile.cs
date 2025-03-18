@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Softana.CQRS.City.Queries.Response;
+using Softana.CQRS.Country.Queries.Response;
 using Softana.CQRS.Saler.Commands.Request;
 using Softana.CQRS.Saler.Queries.Response;
 using Softana.Models;
@@ -35,6 +37,24 @@ namespace Softana.Mapping
             #region Queries
 
             CreateMap<Saler, GetSalerByIdQueryResponse>();
+
+            #endregion
+            #endregion
+
+            #region City
+
+            #region Queries
+
+            CreateMap<City, GetCityByIdQueryResponse>();
+
+            #endregion
+            #endregion
+
+            #region Country
+
+            #region Queries
+
+            CreateMap<Country, GetCountryByIdQueryResponse>();
 
             #endregion
             #endregion
