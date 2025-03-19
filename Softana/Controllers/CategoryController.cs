@@ -35,6 +35,8 @@ public class CategoryController : ControllerBase
         GetCategoryByIdQueryResponse response = await _mediator.Send(new GetCategoryByIdQueryRequest { CategoryId = Id });
         return Ok(response);
     }
+
+    [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateCategoryCommandRequest request)
     {
         CreateCategoryCommandResponse response = await _mediator.Send(request);
@@ -48,7 +50,7 @@ public class CategoryController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         //, Duser = DecodeToken.GetClaim(Request.Headers["Authorization"], "Username")

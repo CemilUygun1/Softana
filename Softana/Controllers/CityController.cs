@@ -50,7 +50,7 @@ public class CityController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         DeleteCityCommandRequest request = new DeleteCityCommandRequest() { CityId = id };
