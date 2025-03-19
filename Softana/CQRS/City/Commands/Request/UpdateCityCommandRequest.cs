@@ -14,6 +14,6 @@ namespace Softana.CQRS.City.Commands.Request
         public string StateName { get; set; }
         public string CountryName { get; set; }
 
-        public List<Country> Countries { get; set; }
+        public List<Models.Country> Countries { get; set; }
     }
 }

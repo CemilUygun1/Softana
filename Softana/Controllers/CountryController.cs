@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Softana.Context;
 using Softana.CQRS.Country.Queries.Request;
@@ -7,6 +8,7 @@ using Softana.Models;
 
 namespace Softana.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/Countries")]
 public class CountryController : ControllerBase
