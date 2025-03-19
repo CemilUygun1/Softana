@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Softana.Context;
 using Softana.CQRS.Saler.Commands.Request;
@@ -9,6 +10,7 @@ using Softana.Models;
 
 namespace Softana.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/Salers")]
 public class SalerController : ControllerBase
