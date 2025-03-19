@@ -50,7 +50,7 @@ public class SalerController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         DeleteSalerCommandRequest request = new DeleteSalerCommandRequest() { SalerId = id };

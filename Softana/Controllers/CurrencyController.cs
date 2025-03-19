@@ -24,7 +24,7 @@ public class CurrencyController : ControllerBase
     }
 
     [HttpGet]
-    public List<Currency> GetCategories()
+    public List<Currency> GetCurrencies()
     {
         return _context.Currencies.Where(x => x.IsDeleted != true).OrderByDescending(x => x.Name).ToList();
     }
@@ -35,6 +35,8 @@ public class CurrencyController : ControllerBase
         GetCurrencyByIdQueryResponse response = await _mediator.Send(new GetCurrencyByIdQueryRequest { CurrencyId = Id });
         return Ok(response);
     }
+
+    [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateCurrencyCommandRequest request)
     {
         CreateCurrencyCommandResponse response = await _mediator.Send(request);
@@ -48,7 +50,7 @@ public class CurrencyController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("{id}")]
+    [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
         //, Duser = DecodeToken.GetClaim(Request.Headers["Authorization"], "Username")
